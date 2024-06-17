@@ -21,33 +21,57 @@ class LiveQuillServiceProvider extends ServiceProvider
 			], 'live-quill-views');
 			$this->publishes([
 				__DIR__ . '/../../config/config.php' => config_path('live-quill.php'),
-			], 'live-quil-config');
+			], 'live-quill-config');
 		}
 
-		Blade::directive('liveQuillScripts', function () {
+		Blade::directive('liveQuillDark', function () {
 			return <<<'HTML'
-                <script>
-                        window.livewire.on('livewire-select-focus-search', (data) => {
-                            const el = document.getElementById(`${data.name || 'invalid'}`);
+				<style>
+					/* Dark Mode Editor Text and Background */
+					.ql-container.ql-dark-mode.ql-snow {
+						background-color: #1e1e1e;
+						color: #c9d1d9;
+					}
 
-                            if (!el) {
-                                return;
-                            }
+					/* Dark Mode Toolbar */
+					.ql-toolbar.ql-dark-mode.ql-snow {
+						background-color: #2d2d2d;
+						border-color: #444;
+					}
 
-                            el.focus();
-                        });
+					/* Dark Mode Toolbar Buttons */
+					.ql-toolbar.ql-dark-mode.ql-snow .ql-picker,
+					.ql-toolbar.ql-dark-mode.ql-snow .ql-stroke,
+					.ql-toolbar.ql-dark-mode.ql-snow .ql-picker-label,
+					.ql-toolbar.ql-dark-mode.ql-snow .ql-picker-item,
+					.ql-toolbar.ql-dark-mode.ql-snow .ql-picker-options {
+						color: #ffffff; /* Color blanco para mejor visibilidad */
+					}
 
-                        window.livewire.on('livewire-select-focus-selected', (data) => {
-                            const el = document.getElementById(`${data.name || 'invalid'}-selected`);
+					/* Customize button colors when active */
+					.ql-toolbar.ql-dark-mode.ql-snow .ql-active .ql-fill,
+					.ql-toolbar.ql-dark-mode.ql-snow .ql-active .ql-stroke {
+						color: #ffffff; /* Color blanco para mejor visibilidad */
+					}
 
-                            if (!el) {
-                                return;
-                            }
+					/* Dark Mode Selection Menus */
+					.ql-toolbar.ql-dark-mode.ql-snow .ql-picker-options {
+						background-color: #3a3a3a; /* Fondo del menú */
+						border-color: #444;
+					}
 
-                            el.focus();
-                        });
-                    </script>
-HTML;
+					/* Dark Mode Editor Text */
+					.ql-container.ql-dark-mode.ql-snow .ql-editor {
+						color: #c9d1d9;
+						border-color: #444;
+					}
+
+					/* Dark Mode Editor Cursor */
+					.ql-container.ql-dark-mode.ql-snow .ql-editor.ql-blank::before {
+						color: #c9d1d9;
+					}
+				</style>
+			HTML;
 		});
 	}
 
