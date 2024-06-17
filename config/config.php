@@ -32,7 +32,7 @@ return [
     | Refers to the widget that will switch between color modes.
 	| document.querySelector("{{ config('live-quill.dark_widget') }}")
     */
-	'dark_widget' => '',
+	'dark_widget' => null,
 	/*
     |--------------------------------------------------------------------------
     | Dark mode session key
@@ -41,5 +41,5 @@ return [
     | Refers to the session variable that controls the color scheme
 	| from the browser session.
     */
-	'session_darkmode_key' => ''
+	'session_darkmode_key' => null
 ];

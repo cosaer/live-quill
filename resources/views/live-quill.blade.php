@@ -12,7 +12,6 @@
 	<!-- Include the Quill library -->
 	<script src="{{ config('live-quill.pacakge_source.js') }}"></script>
   <script>
-		console.log(@json(config('live-quill.dark_widget', false)))
 		<!-- Initialize Quill editor -->
     const quill = new Quill('#{{ $quillId }}', {
       modules: {
@@ -49,7 +48,7 @@
 				toggleDarkMode();
 			}
 			let darkMode ="{{ config('live-quill.dark_widget', null)}}";
-			if( darkMode != 'null' && darkMode != undefined){
+			if( darkMode != 'null' && darkMode.trim() !== ''){
 				let darkWidget = document.querySelector("{{ config('live-quill.dark_widget') }}");
 				darkWidget.addEventListener('click', (e) => {
 					console.log("asdasdasd");
