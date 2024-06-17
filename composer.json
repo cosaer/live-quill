@@ -1,0 +1,30 @@
+{
+    "name": "cosaer/live-quill",
+    "description": "Implementing quilljs in a livewire component",
+    "type": "library",
+    "version": "1.0.0-dev",
+    "require": {
+        "livewire/livewire": "^2.12"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Cosaer\\LiveQuill\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Carlos Cesar Reyes Penagos",
+            "email": "cosaer96reypenagos@gmail.com"
+        }
+    ],
+    "scripts": {
+        "post-install-cmd": [
+            "@php -r \"echo 'Please run \\\"npm install quill\\\" to install the required JavaScript package.\\n';\""
+        ],
+        "post-update-cmd": [
+            "@php -r \"echo 'Please run \\\"npm install quill\\\" to install the required JavaScript package.\\n';\""
+        ]
+    },
+    "minimum-stability": "dev"
+}
