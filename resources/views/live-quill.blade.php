@@ -34,7 +34,7 @@
       @this.set('value', val);
     });
 
-		// Función para alternar entre modo oscuro y claro
+		// Function to switch between dark and light mode
 		function toggleDarkMode() {
 			var quillContainer = document.querySelector('.ql-container');
 			var quillToolbar = document.querySelector('.ql-toolbar');
@@ -47,11 +47,10 @@
 			{
 				toggleDarkMode();
 			}
-			let darkMode ="{{ config('live-quill.dark_widget', null)}}";
-			if( darkMode != 'null' && darkMode.trim() !== ''){
+			let darkMode = @json(config('live-quill.dark_widget', null));
+			if( darkMode != 'null' && darkMode){
 				let darkWidget = document.querySelector("{{ config('live-quill.dark_widget') }}");
 				darkWidget.addEventListener('click', (e) => {
-					console.log("asdasdasd");
 					toggleDarkMode();
 				});
 			}
