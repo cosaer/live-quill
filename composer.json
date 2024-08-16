@@ -4,7 +4,7 @@
     "type": "library",
     "version": "1.0.0-dev",
     "require": {
-        "livewire/livewire": "^2.12"
+        "livewire/livewire": "^3.0"
     },
     "license": "MIT",
     "autoload": {
