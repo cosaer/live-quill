@@ -2,7 +2,7 @@
     "name": "cosaer/live-quill",
     "description": "Implementing quilljs in a livewire component",
     "type": "library",
-    "version": "1.0.0-dev",
+    "version": "1.1.0",
     "require": {
         "livewire/livewire": "^3.0"
     },
@@ -26,5 +26,5 @@
             "@php -r \"echo 'Please run \\\"npm install quill\\\" to install the required JavaScript package.\\n';\""
         ]
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "beta"
 }

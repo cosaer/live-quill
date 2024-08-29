@@ -2,26 +2,23 @@
 
 namespace Cosaer\LiveQuill;
 
+use Livewire\Attributes\Modelable;
 use Livewire\Component;
 
 class LiveQuill extends Component
 {
-	const EVENT_VALUE_UPDATED = 'quill_value_updated';
-
+	#[Modelable]
 	public $value;
 
 	public $quillId;
 
-	public function mount($value = '')
+	public function mount()
 	{
-		$this->value = $value;
-		$this->quillId = 'quill-' . uniqid();
+		$this->quillId = 'quill-'.uniqid() ;
 	}
 
-	public function updatedValue($value)
-	{
-		if($this->analyzeEditorInout($value))
-			$this->emit(self::EVENT_VALUE_UPDATED, $this->value);
+	public function updatedValue($value) {
+		self::analyzeEditorInout($value);
 	}
 
 	private static function analyzeEditorInout($cadena)
